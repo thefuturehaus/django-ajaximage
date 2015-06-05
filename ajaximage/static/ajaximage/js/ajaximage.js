@@ -61,7 +61,7 @@
             img  = el.querySelector('.file-img')
 
         link.setAttribute('href', data.url)
-        path.value = data.filename
+        path.value = data.url
         img.src = data.url
 
         el.className = 'ajaximage img-active'

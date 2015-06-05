@@ -56,9 +56,9 @@ class AjaxImageWidget(widgets.TextInput):
         # form value is not a FieldFile. Use storage.url and file_path - works
         # with FieldFile instances and string formdata
         file_path = str(value) if value else ''
-        file_url = default_storage.url(file_path) if value else ''
+        file_url = file_path  # default_storage.url(file_path) if value else ''
 
-        file_name = os.path.basename(file_url)
+        file_name = file_path  # os.path.basename(file_url)
 
         output = self.html.format(upload_url=upload_url,
                              file_url=file_url,
